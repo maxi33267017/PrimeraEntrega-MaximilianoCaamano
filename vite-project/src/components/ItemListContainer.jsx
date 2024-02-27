@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const ItemListContainer = ({ greeting }) => {
     return (
@@ -17,8 +17,8 @@ const ItemListContainer = ({ greeting }) => {
     );
   };
   
-  ItemListContainer.propTypes = {
-    greeting: PropTypes.string.isRequired,
-  };
+  // ItemListContainer.propTypes = {
+  //   greeting: PropTypes.string.isRequired,
+  // };
 
   export default ItemListContainer;

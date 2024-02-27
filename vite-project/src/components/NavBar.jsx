@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import CartWidget from './CartWidget';
 const Navbar = ({ links }) => {
   return (
@@ -23,13 +23,13 @@ const Navbar = ({ links }) => {
   );
 };
 
-Navbar.propTypes = {
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      url: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
+// Navbar.propTypes = {
+//   links: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       url: PropTypes.string.isRequired,
+//       text: PropTypes.string.isRequired,
+//     })
+//   ).isRequired,
+// };
 
 export default Navbar;
