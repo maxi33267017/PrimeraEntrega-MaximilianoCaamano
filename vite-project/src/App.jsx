@@ -1,25 +1,30 @@
 import './App.css';
-
-import Navbar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import logoImage from './assets/img/logo.png';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomeComponent from './components/home/HomeComponent';
+import ProductsComponent from './components/products/ProductsComponent';
+import ContactComponent from './components/contact/ContactComponent';
+import NavBar from './components/navigation/NavBar';
+import SingleProduct from './components/product/SingleProduct';
+import CategoryComponent from './components/categories/CategoryComponent';
 
 function App() {
-  const navLinks = [
-    { url: '/contacto', text: 'Contacto' },
-    { url: '/productos', text: 'Productos' },
-    { url: '/nosotros', text: 'Nosotros' },
-  ];
-
   return (
     <>
-      <Navbar links={navLinks} />
-      <div>
-      <img src={logoImage} alt="Logo" className="logo-img" />
-      <ItemListContainer greeting="¡Bienvenido a nuestra tienda en línea!" />
-    </div>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route exact path="/" element={<HomeComponent />} />
+          <Route exact path="/products" element={<ProductsComponent />} />
+          <Route exact path="/product/:prodId" element={<SingleProduct />} />
+          <Route
+            exact
+            path="/category/:catName"
+            element={<CategoryComponent />}
+          />
+          <Route exact path="/contact" element={<ContactComponent />} />
+        </Routes>
+      </BrowserRouter>
     </>
-    
   );
 }
 
