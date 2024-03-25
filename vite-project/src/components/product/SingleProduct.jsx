@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getProduct } from '../../asyncMock';
+import { getProducts } from '../../asyncMock';
 
 export default function SingleProduct() {
   const { prodId } = useParams();
@@ -8,17 +8,25 @@ export default function SingleProduct() {
   const [product, setProduct] = useState({});
 
   useEffect(() => {
-    setProduct(getProduct(prodId));
+    const fetchData = async () => {
+      const data = await getProducts;
+      const productData = data.find(item => item.id === parseInt(prodId));
+      setProduct(productData);
+    };
+
+    fetchData();
   }, [prodId]);
 
   return (
     <>
-      <div>
-        <h1>{product.category}{prodId}</h1>
+    <div className="card">
+      <img src={product.image} className="card-img-top img-fluid imgProduct" alt={product.title} />
+      <div className="card-body">
+        <h5 className="card-title">{product.category} {prodId}</h5>
         <h3>Nombre: {product.title}</h3>
-        <img src={product.image} alt={product.title} />
-        <p>Precio $ {product.price}</p>
+        <p className="card-text">Precio: $ {product.price}</p>
       </div>
+    </div>
     </>
   );
 }

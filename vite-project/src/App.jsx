@@ -8,10 +8,11 @@ import SingleProduct from './components/product/SingleProduct';
 import CategoryComponent from './components/categories/CategoryComponent';
 
 function App() {
+  const links = []
   return (
     <>
       <BrowserRouter>
-        <NavBar />
+        <NavBar links={links} />
         <Routes>
           <Route exact path="/" element={<HomeComponent />} />
           <Route exact path="/products" element={<ProductsComponent />} />

@@ -3,7 +3,7 @@ const products=[
         id:1,
         title: 'Retroexcavadora',
         price: '80000',
-        category: 'Machines',
+        category: 'Maquinarias',
         image: "https://www.deere.com.ar/assets/images/common/products/backhoes/320-p-tier/320p_r4x001825_rrd_large_8e5777641ead248db1c2862c183225ca1c37c4cf.jpg",
     },
 
@@ -11,7 +11,7 @@ const products=[
         id:2,
         title: 'Excavadora',
         price: '95000',
-        category: 'Machines',
+        category: 'Maquinarias',
         image: "https://www.deere.com.ar/assets/images/common/products/excavators/160g/160glc_excavator_r4x000132_rrd_1366x768_large_803a299d7b1aa056a58a92dc14c65b85b61ce1f7.jpg"
     },
     {
