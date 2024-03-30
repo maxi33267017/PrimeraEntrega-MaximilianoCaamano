@@ -27,17 +27,17 @@ export default function CategoryComponent() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getProducts; // Invoke getProducts as a Promise
+        const data = await getProducts; 
         if (catName === 'Maquinarias' || catName === 'Repuestos') {
           const filteredProducts = data.filter(product => product.category === catName);
           setProducts(filteredProducts);
         } else {
-          // Handle case when category name doesn't match
+   
           setProducts([]);
         }
       } catch (error) {
         console.error('Error fetching products:', error);
-        // Handle error as necessary
+
       }
     };
 
